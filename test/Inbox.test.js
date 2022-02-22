@@ -18,6 +18,7 @@ beforeEach(async () => {
 });//the above inbox object is a JSON representation of the contract(the contract that exists on the block chain) that we can interact with
     describe('Inbox', () =>{ 
      it('deploys a contract', () => {
-         console.log(inbox)
+         assert.ok(inbox.options.address);//after we deploy the contract to the ganache network this address property will contain the address of where it was deployed to//ok method essentially determines if something exists to pass
      }); 
+
     });
