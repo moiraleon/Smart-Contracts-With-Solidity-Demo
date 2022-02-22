@@ -7,6 +7,7 @@ const {interface, bytecode} = require('../compile');
 
 let accounts;
 let inbox;
+//const INITIAL_STRING = 'Hi there!' //could be used for more robust testing and throughout
 
 beforeEach(async () => { 
     // Get a list of all accounts 
@@ -19,6 +20,10 @@ beforeEach(async () => {
     describe('Inbox', () =>{ 
      it('deploys a contract', () => {
          assert.ok(inbox.options.address);//after we deploy the contract to the ganache network this address property will contain the address of where it was deployed to//ok method essentially determines if something exists to pass
-     }); 
+     });
+     it('has a default message', async () => { 
+        const message = await inbox.methods.message().call(); //accesses the contract(inbox) then the property on the object called methods(all the public funcitons on that contract), then calling that specific funiton by name(message or could be setMEssage function) incoke it with a pair of parethasis on the contract then parenthasis following the call()---- message(this is where we would pass in any arguments that this function may require).call(this is where we customize the transaction we are trying to send out --like who is paying for this transaction and how much gas to use)
+        assert.equal(message,'Hi there!');
+    });
 
     });
