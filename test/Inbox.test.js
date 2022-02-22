@@ -6,3 +6,17 @@ const Web3 = require('web3'); //this is a constructor - we are making instances 
 const web3 = new Web3(ganache.provider());
 
 // contract test code will go here
+
+beforeEach(() => { 
+    // Get a list of all accounts 
+    web3.eth.getAccounts().then(fetchedAccounts => { 
+    console. log(fetchedAccounts); 
+    });
+    // Use one of those accounts to deploy E
+    // the contract
+    });
+
+    describe('Inbox', () =>{ 
+     it('deploys a contract', () => {}); 
+    });
+    
