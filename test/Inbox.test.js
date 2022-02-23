@@ -26,4 +26,10 @@ beforeEach(async () => {
         assert.equal(message,'Hi there!');
     });
 
+    it('can change the message',async ()=>{
+        await inbox.methods.setMessage('bye').send({from: accounts[0]})//the send tells it to send what we have prepared to the network and specifies who is going to pay for the gas within the object and with the key from
+        const message = await inbox.methods.message().call();
+        assert.equal(message, 'bye');
+    });
+
     });
