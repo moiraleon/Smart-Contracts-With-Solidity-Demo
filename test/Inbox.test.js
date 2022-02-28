@@ -31,5 +31,4 @@ beforeEach(async () => {
         const message = await inbox.methods.message().call();
         assert.equal(message, 'bye');
     });
-
     });
