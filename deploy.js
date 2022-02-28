@@ -7,7 +7,7 @@ const provider = new HDWalletProvider(
     'https://rinkeby.infura.io/v3/6c1009cb8115459680f9055ddcdeded0'
     );
 
-    const web3 = new web3(provider);
+    const web3 = new Web3(provider);
 
     const deploy = async () =>{
         const accounts = await web3.eth.getAccounts();
